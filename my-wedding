@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ذكرى زفاف هيثم وصباح</title>
+    
+    <meta name="robots" content="noindex, nofollow">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdfbf7; /* لون خلفية هادئ */
+            text-align: center;
+            margin: 0;
+            padding: 50px 20px;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #34495e;
+            font-weight: normal;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px; /* حواف دائرية للصورة */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* ظل خفيف للصورة */
+            margin: 20px 0;
+        }
+
+        .verse {
+            font-style: italic;
+            font-size: 1.2em;
+            color: #555;
+            margin: 30px auto;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .video-button {
+            background-color: #008CBA;
+            color: white;
+            padding: 15px 35px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: background-color 0.3s ease; /* تأثير عند تمرير الماوس */
+            margin-top: 20px;
+        }
+
+        .video-button:hover {
+            background-color: #005f7a; /* يغمق اللون قليلاً عند لمسه */
+        }
+    </style>
+</head>
+<body>
+
+    <h3>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h3>
+    
+    <h1>هيثم 💙 صباح</h1>
+    <h2>حفل زفاف</h2>
+
+    <img src="100006450
