@@ -4,70 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ذكرى زفاف هيثم وصباح</title>
-    
     <meta name="robots" content="noindex, nofollow">
-
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fdfbf7; /* لون خلفية هادئ */
+            background-color: #fdfbf7;
             text-align: center;
+            padding: 40px 20px;
             margin: 0;
-            padding: 50px 20px;
             color: #333;
         }
-
-        h1 {
-            color: #2c3e50;
-            font-size: 2.5em;
-        }
-
-        h2 {
-            color: #34495e;
-            font-weight: normal;
-        }
-
         .main-image {
             max-width: 100%;
             height: auto;
-            border-radius: 15px; /* حواف دائرية للصورة */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* ظل خفيف للصورة */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             margin: 20px 0;
         }
-
-        .verse {
-            font-style: italic;
-            font-size: 1.2em;
-            color: #555;
-            margin: 30px auto;
-            max-width: 600px;
-            line-height: 1.6;
-        }
-
         .video-button {
             background-color: #008CBA;
             color: white;
-            padding: 15px 35px;
-            text-align: center;
+            padding: 15px 30px;
             text-decoration: none;
             display: inline-block;
-            font-size: 18px;
             font-weight: bold;
             border-radius: 50px;
-            transition: background-color 0.3s ease; /* تأثير عند تمرير الماوس */
             margin-top: 20px;
         }
-
-        .video-button:hover {
-            background-color: #005f7a; /* يغمق اللون قليلاً عند لمسه */
+        .verse {
+            font-style: italic;
+            font-size: 1.1em;
+            margin: 20px auto;
+            max-width: 500px;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
-
     <h3>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h3>
-    
     <h1>هيثم 💙 صباح</h1>
     <h2>حفل زفاف</h2>
 
-    <img src="100006450
+    <img src="1000064509.jpg" alt="ذكرى الزفاف" class="main-image" width="500">
+
+    <p class="verse">
+        "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"
+    </p>
+
+    <a href="https://youtu.be/uZQm1VTvHIY?si=SX-jdO4vud3eqreF" class="video-button" target="_blank">
+        مشاهدة فيديو الحفل عبر يوتيوب
+    </a>
+
+    <p style="margin-top: 40px; color: #888;">19 فبراير 2023</p>
+</body>
+</html>
