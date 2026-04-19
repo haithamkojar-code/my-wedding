@@ -24,8 +24,8 @@
 
         h1 { color: #2c3e50; font-size: 2.5em; margin-bottom: 10px; }
         h2 { color: #7f8c8d; font-weight: 300; margin-top: 0; }
-        h3 { color: #2c3e50; }
 
+        /* صندوق العرض التلقائي */
         .slideshow-box {
             position: relative;
             width: 100%;
@@ -37,7 +37,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             border: 5px solid white;
             cursor: pointer;
-            background-color: #eee;
+            background-color: #fff;
         }
 
         .slideshow-box img {
@@ -46,11 +46,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain; /* تظهر الصورة بالكامل بدون قص */
+            object-fit: contain; /* لإظهار الصورة كاملة بدون نقص */
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
 
+        /* الصورة النشطة تظهر */
         .slideshow-box img.active {
             opacity: 1;
         }
@@ -77,10 +78,6 @@
             transition: 0.3s;
         }
 
-        .photo-gallery img:hover {
-            transform: scale(1.05);
-        }
-
         .video-button {
             background-color: #d4af37;
             color: white !important;
@@ -96,7 +93,6 @@
         .verse { font-style: italic; color: #5d6d7e; margin: 25px 0; font-size: 1.1em; }
         .date { margin-top: 40px; color: #bdc3c7; font-size: 0.9em; }
     </style>
-
 </head>
 
 <body onload="checkPassword()">
@@ -119,20 +115,16 @@
         }
 
         let currentSlide = 0;
-        const slides = document.querySelectorAll('.slideshow-box img');
-        const totalSlides = slides.length;
-
         function startSlideshow() {
-            if (totalSlides > 0) {
-                slides[currentSlide].classList.add('active');
-                setInterval(nextSlide, 4000); // تغيير الصورة كل 4 ثوانٍ
+            const slides = document.querySelectorAll('.slideshow-box img');
+            if (slides.length > 0) {
+                slides[0].classList.add('active'); // إظهار أول صورة فوراً
+                setInterval(function() {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }, 4000); // تغيير الصورة كل 4 ثوانٍ
             }
-        }
-
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % totalSlides;
-            slides[currentSlide].classList.add('active');
         }
     </script>
 
@@ -144,11 +136,12 @@
         <p class="verse">"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"</p>
 
         <div id="mainSlideshow" class="slideshow-box" onclick="showFullGallery()">
-            <img src="jp1.jpg">
+            <img src="jp1.jpg" class="active">
             <img src="jp2.jpg">
             <img src="jp3.jpg">
             <img src="jp4.jpg">
             <img src="jp5.jpg">
+            <img src="jp6.jpg">
         </div>
 
         <div id="fullGallery" class="photo-gallery">
@@ -159,7 +152,7 @@
             <img src="jp17.jpg"><img src="jp18.jpg"><img src="jp19.jpg"><img src="jp20.jpg">
             <img src="jp21.jpg"><img src="jp22.jpg"><img src="jp23.jpg"><img src="jp24.jpg">
             <img src="jp25.jpg"><img src="jp26.jpg">
-            </div>
+        </div>
 
         <br>
         <a href="https://youtu.be/uZQm1VTvHIY?si=SX-jdO4vud3eqreF" class="video-button" target="_blank">
