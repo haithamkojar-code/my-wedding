@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>ذكرى زفاف هيثم وصباح</title>
     
-    <meta name="robots" content="noindex, nofollow">
-
     <style>
-        /* إخفاء محتوى الصفحة في البداية لضمان الخصوصية */
         body {
             display: none; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,94 +18,150 @@
         }
 
         .main-container {
-            max-width: 600px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        h1 {
-            color: #2c3e50;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+        h1 { color: #2c3e50; font-size: 2.5em; margin-bottom: 10px; }
+        h2 { color: #7f8c8d; font-weight: 300; margin-top: 0; }
+        h3 { color: #2c3e50; }
 
-        h2 {
-            color: #7f8c8d;
-            font-weight: 300;
-            margin-top: 0;
-        }
-
-        .main-image {
-            max-width: 100%;
-            height: auto;
+        .slideshow-box {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 350px;
+            margin: 30px auto;
             border-radius: 20px;
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            margin: 25px 0;
             border: 5px solid white;
+            cursor: pointer;
+            background-color: #eee;
         }
 
-        .verse {
-            font-style: italic;
-            font-size: 1.2em;
-            color: #5d6d7e;
-            line-height: 1.8;
-            margin: 30px 0;
-            padding: 0 15px;
+        .slideshow-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* تظهر الصورة بالكامل بدون قص */
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
 
-        .video-button {
-            background-color: #d4af37; /* لون ذهبي */
-            color: white;
-            padding: 18px 40px;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: bold;
-            font-size: 1.1em;
-            border-radius: 50px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        .slideshow-box img.active {
+            opacity: 1;
         }
 
-        .video-button:hover {
-            background-color: #b8962d;
+        .photo-gallery {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .photo-gallery img:hover {
             transform: scale(1.05);
         }
 
-        .date {
-            margin-top: 50px;
-            color: #bdc3c7;
-            letter-spacing: 2px;
+        .video-button {
+            background-color: #d4af37;
+            color: white !important;
+            padding: 15px 35px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            margin: 20px 0;
         }
+
+        .verse { font-style: italic; color: #5d6d7e; margin: 25px 0; font-size: 1.1em; }
+        .date { margin-top: 40px; color: #bdc3c7; font-size: 0.9em; }
     </style>
 
-    <script>
-        function checkPassword() {
-            // كلمة السر الافتراضية (يمكنك تغييرها بين العلامتين)
-            var password = prompt("الرجاء إدخال كلمة السر لمشاهدة ذكرى الزفاف:");
-            
-            if (password === "1982") { 
-                document.body.style.display = "block"; // إظهار الصفحة إذا كانت صحيحة
-            } else {
-                alert("عذراً، كلمة السر خاطئة! حاول مرة أخرى.");
-                window.location.reload(); // إعادة التحميل للمحاولة مجدداً
-            }
-        }
-    </script>
 </head>
 
 <body onload="checkPassword()">
 
+    <script>
+        function checkPassword() {
+            var password = prompt("الرجاء إدخال كلمة السر لرؤية الصفحة:");
+            if (password === "1982") {
+                document.body.style.display = "block";
+                startSlideshow();
+            } else {
+                alert("عذراً، كلمة السر خاطئة!");
+                location.reload();
+            }
+        }
+
+        function showFullGallery() {
+            document.getElementById('mainSlideshow').style.display = 'none';
+            document.getElementById('fullGallery').style.display = 'grid';
+        }
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slideshow-box img');
+        const totalSlides = slides.length;
+
+        function startSlideshow() {
+            if (totalSlides > 0) {
+                slides[currentSlide].classList.add('active');
+                setInterval(nextSlide, 4000); // تغيير الصورة كل 4 ثوانٍ
+            }
+        }
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
+
     <div class="main-container">
         <h3>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h3>
-        
         <h1>هيثم 💙 صباح</h1>
         <h2>ذكرى عقد القران</h2>
 
-        <img src="1000064509.jpg" alt="ذكرى الزفاف" class="main-image">
+        <p class="verse">"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"</p>
 
-        <p class="verse">
-            "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"
-        </p>
+        <div id="mainSlideshow" class="slideshow-box" onclick="showFullGallery()">
+            <img src="jp1.jpg">
+            <img src="jp2.jpg">
+            <img src="jp3.jpg">
+            <img src="jp4.jpg">
+            <img src="jp5.jpg">
+        </div>
 
+        <div id="fullGallery" class="photo-gallery">
+            <img src="jp1.jpg"><img src="jp2.jpg"><img src="jp3.jpg"><img src="jp4.jpg">
+            <img src="jp5.jpg"><img src="jp6.jpg"><img src="jp7.jpg"><img src="jp8.jpg">
+            <img src="jp9.jpg"><img src="jp10.jpg"><img src="jp11.jpg"><img src="jp12.jpg">
+            <img src="jp13.jpg"><img src="jp14.jpg"><img src="jp15.jpg"><img src="jp16.jpg">
+            <img src="jp17.jpg"><img src="jp18.jpg"><img src="jp19.jpg"><img src="jp20.jpg">
+            <img src="jp21.jpg"><img src="jp22.jpg"><img src="jp23.jpg"><img src="jp24.jpg">
+            <img src="jp25.jpg"><img src="jp26.jpg">
+            </div>
+
+        <br>
         <a href="https://youtu.be/uZQm1VTvHIY?si=SX-jdO4vud3eqreF" class="video-button" target="_blank">
             🎥 مشاهدة فيديو الحفل
         </a>
