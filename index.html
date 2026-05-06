@@ -7,6 +7,7 @@
     <title>ذكرى زفاف هيثم وصباح</title>
     
     <style>
+        /* إخفاء المحتوى حتى إدخال كلمة السر */
         body {
             display: none; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,6 +22,7 @@
         h1 { color: #2c3e50; font-size: 2.5em; margin-bottom: 10px; }
         h2 { color: #7f8c8d; font-weight: 300; margin-top: 0; }
 
+        /* صندوق العرض التلقائي (Slideshow) */
         .slideshow-box {
             position: relative;
             width: 100%;
@@ -48,6 +50,7 @@
 
         .slideshow-box img.active { opacity: 1; }
 
+        /* معرض الصور الكامل */
         .photo-gallery {
             display: none;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -69,17 +72,18 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* حاوية الفيديو المدمج */
+        /* حاوية فيديو اليوتيوب المدمج (للحفل الكامل) */
         .video-container {
             position: relative;
             width: 100%;
-            max-width: 700px;
-            margin: 30px auto;
+            max-width: 750px;
+            margin: 40px auto;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            padding-bottom: 56.25%; /* نسبة 16:9 */
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+            padding-bottom: 56.25%; /* نسبة أبعاد 16:9 */
             height: 0;
+            background: #000;
         }
 
         .video-container iframe {
@@ -93,6 +97,8 @@
 
         .verse { font-style: italic; color: #5d6d7e; margin: 25px 0; font-size: 1.1em; }
         .date { margin-top: 40px; color: #bdc3c7; font-size: 0.9em; }
+        
+        .gallery-tip { font-size: 0.8em; color: #999; margin-top: 10px; }
     </style>
 </head>
 
@@ -100,7 +106,8 @@
 
     <script>
         function checkPassword() {
-            var password = prompt("الرجاء إدخال كلمة السر لرؤية الصفحة:");
+            // ملاحظة: كلمة السر هي سنة ميلادك المذكورة في البيانات 1982
+            var password = prompt("الرجاء إدخال كلمة السر لرؤية هذه الذكرى الخاصة:");
             if (password === "1982") {
                 document.body.style.display = "block";
                 startSlideshow();
@@ -112,6 +119,7 @@
 
         function showFullGallery() {
             document.getElementById('mainSlideshow').style.display = 'none';
+            document.getElementById('galleryHint').style.display = 'none';
             document.getElementById('fullGallery').style.display = 'grid';
         }
 
@@ -132,9 +140,9 @@
     <div class="main-container">
         <h3>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h3>
         <h1>هيثم 💙 صباح</h1>
-        <h2>ذكرى عقد القران</h2>
+        <h2>ذكرى عقد القران السعيدة</h2>
 
-        <p class="verse">"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْواجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"</p>
+        <p class="verse">"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"</p>
 
         <div id="mainSlideshow" class="slideshow-box" onclick="showFullGallery()">
             <img src="jp18.JPG" class="active">
@@ -144,6 +152,7 @@
             <img src="jp24.JPG">
             <img src="jp21.JPG">
         </div>
+        <p id="galleryHint" class="gallery-tip">اضغط على الصور لعرض المعرض الكامل</p>
 
         <div id="fullGallery" class="photo-gallery">
             <img src="jp2.JPG" loading="lazy">
@@ -173,14 +182,14 @@
         </div>
 
         <div class="video-container">
-            <iframe src="https://https://youtu.be/LkwrcotpCtA?is=s_s_4qbMMtJz0zjL" 
-                    title="YouTube video player" 
+            <iframe src="https://www.youtube.com/embed/LkwrcotpCtA" 
+                    title="فيديو الحفل الكامل" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen>
             </iframe>
         </div>
 
-        <div class="date">19 فبراير 2023</div>
+        <div class="date">تاريخ المناسبة: 19 فبراير 2023</div>
     </div>
 
 </body>
