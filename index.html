@@ -7,7 +7,6 @@
     <title>ذكرى زفاف هيثم وصباح</title>
     
     <style>
-        /* إخفاء المحتوى حتى إدخال كلمة السر */
         body {
             display: none; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,7 +21,6 @@
         h1 { color: #2c3e50; font-size: 2.5em; margin-bottom: 10px; }
         h2 { color: #7f8c8d; font-weight: 300; margin-top: 0; }
 
-        /* صندوق العرض التلقائي (Slideshow) */
         .slideshow-box {
             position: relative;
             width: 100%;
@@ -50,7 +48,6 @@
 
         .slideshow-box img.active { opacity: 1; }
 
-        /* معرض الصور الكامل */
         .photo-gallery {
             display: none;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -72,7 +69,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* حاوية فيديو اليوتيوب المدمج (للحفل الكامل) */
         .video-container {
             position: relative;
             width: 100%;
@@ -81,7 +77,7 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-            padding-bottom: 56.25%; /* نسبة أبعاد 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             background: #000;
         }
@@ -97,7 +93,6 @@
 
         .verse { font-style: italic; color: #5d6d7e; margin: 25px 0; font-size: 1.1em; }
         .date { margin-top: 40px; color: #bdc3c7; font-size: 0.9em; }
-        
         .gallery-tip { font-size: 0.8em; color: #999; margin-top: 10px; }
     </style>
 </head>
@@ -106,7 +101,6 @@
 
     <script>
         function checkPassword() {
-            // ملاحظة: كلمة السر هي سنة ميلادك المذكورة في البيانات 1982
             var password = prompt("الرجاء إدخال كلمة السر لرؤية هذه الذكرى الخاصة:");
             if (password === "1982") {
                 document.body.style.display = "block";
@@ -145,52 +139,52 @@
         <p class="verse">"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"</p>
 
         <div id="mainSlideshow" class="slideshow-box" onclick="showFullGallery()">
-            <img src="jp18.JPG" class="active">
-            <img src="jp19.JPG">
-            <img src="jp20.JPG">
-            <img src="jp23.JPG">
-            <img src="jp24.JPG">
-            <img src="jp21.JPG">
+            <img src="IMG_20260506_031830.jpg" class="active">
+            <img src="IMG_20260506_032035.jpg">
+            <img src="IMG_20260506_032105.jpg">
+            <img src="IMG_20260506_032210.jpg">
+            <img src="IMG_20260506_032941.jpg">
+            <img src="IMG_20260506_033007.jpg">
         </div>
         <p id="galleryHint" class="gallery-tip">اضغط على الصور لعرض المعرض الكامل</p>
 
         <div id="fullGallery" class="photo-gallery">
-            <img src="jp2.JPG" loading="lazy">
-            <img src="jp3.JPG" loading="lazy">
-            <img src="jp4.jpg" loading="lazy">
-            <img src="jp5.JPG" loading="lazy">
-            <img src="jp6.JPG" loading="lazy">
-            <img src="jp7.JPG" loading="lazy">
-            <img src="jp8.JPG" loading="lazy">
-            <img src="jp9.JPG" loading="lazy">
-            <img src="jp10.JPG" loading="lazy">
-            <img src="jp11.JPG" loading="lazy">
-            <img src="jp12.JPG" loading="lazy">
-            <img src="jp13.JPG" loading="lazy"> 
-            <img src="jp14.JPG" loading="lazy">
-            <img src="jp15.JPG" loading="lazy">
-            <img src="jp16.JPG" loading="lazy">
-            <img src="jp17.JPG" loading="lazy">
-            <img src="jp18.JPG" loading="lazy">
-            <img src="jp19.JPG" loading="lazy">
-            <img src="jp20.JPG" loading="lazy">
-            <img src="jp21.JPG" loading="lazy">
-            <img src="jp22.JPG" loading="lazy">
-            <img src="jp23.JPG" loading="lazy">
-            <img src="jp24.JPG" loading="lazy">
-            <img src="jp26.jpg" loading="lazy">
+            <img src="IMG_20260506_031830.jpg" loading="lazy">
+            <img src="IMG_20260506_031911.jpg" loading="lazy">
+            <img src="IMG_20260506_031933.jpg" loading="lazy">
+            <img src="IMG_20260506_032003.jpg" loading="lazy">
+            <img src="IMG_20260506_032020.jpg" loading="lazy">
+            <img src="IMG_20260506_032035.jpg" loading="lazy">
+            <img src="IMG_20260506_032105.jpg" loading="lazy">
+            <img src="IMG_20260506_032210.jpg" loading="lazy">
+            <img src="IMG_20260506_032230.jpg" loading="lazy">
+            <img src="IMG_20260506_032248.jpg" loading="lazy">
+            <img src="IMG_20260506_032303.jpg" loading="lazy">
+            <img src="IMG_20260506_032640.jpg" loading="lazy">
+            <img src="IMG_20260506_032700.jpg" loading="lazy">
+            <img src="IMG_20260506_032718.jpg" loading="lazy">
+            <img src="IMG_20260506_032738.jpg" loading="lazy">
+            <img src="IMG_20260506_032800.jpg" loading="lazy">
+            <img src="IMG_20260506_032817.jpg" loading="lazy">
+            <img src="IMG_20260506_032830.jpg" loading="lazy">
+            <img src="IMG_20260506_032846.jpg" loading="lazy">
+            <img src="IMG_20260506_032901.jpg" loading="lazy">
+            <img src="IMG_20260506_032915.jpg" loading="lazy">
+            <img src="IMG_20260506_032927.jpg" loading="lazy">
+            <img src="IMG_20260506_032941.jpg" loading="lazy">
+            <img src="IMG_20260506_032954.jpg" loading="lazy">
+            <img src="IMG_20260506_033007.jpg" loading="lazy">
         </div>
 
         <div class="video-container">
-    <iframe 
-        src="https://www.youtube.com/embed/LkwrcotpCtA?rel=0&showinfo=0" 
-        title="فيديو الحفل الكامل" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen>
-    </iframe>
-</div>
-
+            <iframe 
+                src="https://www.youtube.com/embed/LkwrcotpCtA?rel=0&showinfo=0" 
+                title="فيديو الحفل الكامل" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
 
         <div class="date">تاريخ المناسبة: 19 فبراير 2023</div>
     </div>
